@@ -6,7 +6,7 @@ return [
          'description' => 'OctoCart é um plugin de e-commerce simples para outubro.',
      ]
      'access' => [
-         'orders' => 'Gerenciar as ordens',
+         'orders' => 'Gerenciar os pedidos',
          'products' => 'Gerenciar os produtos',
          'categories' => 'Gerenciar as categorias',
          'other_products' => 'Gerenciar produtos de outros usuários',
