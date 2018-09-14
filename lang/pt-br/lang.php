@@ -78,7 +78,7 @@ return [
         'add_variation' => 'Adicionar variação',
         'product_variation' => 'Variação',
         'content' => 'Descrição',
-        'author_email' => 'Email do autor'
+        'author_email' => 'Email do autor',
     ]
 	'attribute' => [
          'name' => 'Nome',
