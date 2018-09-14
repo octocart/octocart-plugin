@@ -1,0 +1,89 @@
+{% set products = __SELF__.products %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% for product in products %}
+            <div class="col-sm-3">
+                <div class="thumbnail product-card">
+                    {% if product.images.count %}
+                        {% for image in product.images|slice(0, 1) %}
+                            <img data-src="{{ image.filename }}"
+                                 src="{{ image.path }}"
+                                 class="img-responsive"
+                                 alt="{{ product.title }}" />
+                        {% endfor %}
+                    {% else %}
+                        <img src="http://placehold.it/210x210" class="img-responsive" alt="{{ product.title }}">
+                    {% endif %}
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><strong><a href="{{ product.url }}">{{ product.title }}</a></strong></p>
+                                <p>
+                                    {% if product.categories.count %}
+                                        {% for category in product.categories %}
+                                            <a href="{{ category.url }}">{{ category.title }}</a>{% if not loop.last %}, {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>{{ product.description|striptags[:100] ~ '...' }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{ form_open({ 'class': 'form-inline', 'data-request': 'onAddToCart', 'data-request-success': 'location.reload()' }) }}
+                                <input type="hidden" name="productId" value="{{ product.id }}" />
+                                <input type="hidden" name="quantity" value="1" />
+                                {% set name = '' %}
+                                {% set first = false %}
+                                {% for attribute in product.productAttributes %}
+                                    {% if name != attribute.name %}
+                                        {% set name = attribute.name %}
+                                        {% set first = true %}
+                                        <strong style="display: block">{{ attribute.name }}:</strong>
+                                    {% else %}
+                                        {% set first = false %}
+                                    {% endif %}
+                                    <div class="radio" style="display: inline-block;">
+                                        <label><input value="{{ attribute.value }}" type="radio" name="attributes[{{ attribute.name }}]" {% if first == true %} checked {% endif %}> {{ attribute.value }}</label>
+                                    </div>
+                                {% endfor %}
+                                <p>&nbsp;</p>
+                                <p><strong>{{ product.price|price() }}</strong></p>
+                                <p><button type="submit" class="btn btn-primary btn-block"><i class="fa fa-shopping-cart"></i> Add to cart</button></p>
+                                {{ form_close() }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <h3 class="text-center">{{ noProductsMessage }}</h3>
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {% if products.lastPage > 1 %}
+                <ul class="pagination">
+                    {% if products.currentPage > 1 %}
+                        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage-1) })|query() }}">&larr; Prev</a></li>
+                    {% endif %}
+
+                    {% for page in 1..products.lastPage %}
+                        <li class="{{ products.currentPage == page ? 'active' : null }}">
+                            <a href="{{ this.page.baseFileName|page({ (pageParam): page })|query() }}">{{ page }}</a>
+                        </li>
+                    {% endfor %}
+
+                    {% if products.lastPage > products.currentPage %}
+                        <li><a href="{{ this.page.baseFileName|page({ (pageParam): (products.currentPage+1)|query() }) }}">Next &rarr;</a></li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>

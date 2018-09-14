@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: xeor.octocart::lang.attribute.name
+        searchable: true
+    code:
+        label: xeor.octocart::lang.attribute.code
+        searchable: true
+    value:
+        label: xeor.octocart::lang.attribute.value
+        searchable: true

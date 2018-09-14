@@ -1,0 +1,25 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: ''
+
+# Model Form Field configuration
+form: $/xeor/octocart/models/order/fields.yaml
+
+# Model Class name
+modelClass: Xeor\OctoCart\Models\Order
+
+# Default redirect location
+defaultRedirect: xeor/octocart/orders
+
+# Create page
+create:
+    redirect: xeor/octocart/orders/update/:id
+    redirectClose: xeor/octocart/orders
+
+# Update page
+update:
+    redirect: xeor/octocart/orders
+    redirectClose: xeor/octocart/orders

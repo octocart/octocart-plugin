@@ -1,0 +1,138 @@
+{% set product = __SELF__.product %}
+{% set upSells = __SELF__.upSells %}
+
+<div class="spacer"></div>
+<div class="container">
+    <div class="row space-bottom-2x">
+        <div class="col-md-3 col-md-offset-1">
+            {% if product.images.count %}
+                <ul class="bxslider">
+                    {% for image in product.images %}
+                        <li>
+                            <img
+                                 src="{{ image.path }}"
+                                 class="img-responsive"
+                                 alt="{{ product.title }}" />
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="gallery-thumbs-container">
+                    <ul id="gallery-thumbs" class="gallery-thumbs-list">
+                        {% for image in product.images %}
+                            <li class="thumb-item">
+                                <div class="thumb">
+                                    <a href=""> <img data-src="{{ image.filename }}"
+                                                     src="{{ image.path }}"
+                                                     class="img-responsive"
+                                                     alt="{{ product.title }}" /></a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <img src="http://placehold.it/210x210" class="img-responsive" alt="{{ product.title }}">
+            {% endif %}
+        </div>
+        <div class="col-md-7">
+            <h1>{{ product.title }}</h1>
+
+            {% if product.categories.count %}
+                <p>
+                    {% for category in product.categories %}
+                        <a href="{{ category.url }}">{{ category.title }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            {% endif %}
+
+            <div class="description space-bottom-2x">
+                {{ product.excerpt|raw }}
+            </div>
+            <div class="add-to-cart">
+                {{ form_open({ 'data-request': 'onAddToCart', 'data-request-success': 'location.reload()' }) }}
+
+                {% if product.productAttributes.count %}
+                    <div class="product-attributes">
+                        <hr>
+                        <h4>Attributes: </h4>
+                        {% set name = '' %}
+                        {% set first = false %}
+                        {% for attribute in product.productAttributes %}
+                            {% if name != attribute.name %}
+                                {% set name = attribute.name %}
+                                {% set first = true %}
+                                <strong style="display: block">{{ attribute.name }}:</strong>
+                            {% else %}
+                                {% set first = false %}
+                            {% endif %}
+                            <div class="radio" style="display: inline-block;">
+                                <label><input value="{{ attribute.value }}" type="radio" name="attributes[{{ attribute.name }}]" {% if first == true %} checked {% endif %}> {{ attribute.value }}</label>
+                            </div>
+                        {% endfor %}
+                        <hr>
+                    </div>
+                {% endif %}
+
+                {% if product.sale_price %}
+                    <h3><del>{{ product.price|price() }}</del> {{ product.sale_price|price() }}</h3>
+                {% else %}
+                    <h3>{{ product.price|price() }}</h3>
+                {% endif %}
+
+                <input type="hidden" name="productId" value="{{ product.id }}" />
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            <input type="number" name="quantity" value="1" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Add to cart</button>
+                {{ form_close() }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#tab1" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                <li role="presentation"><a href="#tab2" aria-controls="profile" role="tab" data-toggle="tab">Additional Information</a></li>
+                <li role="presentation"><a href="#tab3" aria-controls="messages" role="tab" data-toggle="tab">Reviews</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab1">{{ product.description|raw }}</div>
+                <div role="tabpanel" class="tab-pane" id="tab2"><p>...</p></div>
+                <div role="tabpanel" class="tab-pane" id="tab3"><p>...</p></div>
+            </div>
+
+        </div>
+    </div>
+    {% if upSells.count %}
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <h2>You may also like…</h2>
+            <div class="container-fluid">
+                <div class="row">
+                {% for upSell in upSells %}
+                    <div class="col-md-3">
+                        {% for image in upSell.images|slice(0, 1) %}
+                            <img data-src="{{ image.filename }}"
+                                 src="{{ image.path }}"
+                                 class="img-responsive"
+                                 alt="{{ upSell.title }}" />
+                        {% else %}
+                            <img src="http://placehold.it/210x210" class="img-responsive" alt="{{ upSell.title }}">
+                        {% endfor %}
+                        <p><strong><a href="{{ upSell.url }}">{{ upSell.title }}</a></strong></p>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+

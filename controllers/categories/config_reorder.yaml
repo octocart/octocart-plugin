@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: xeor.octocart::lang.categories.reorder
+
+# Attribute name
+nameFrom: title
+
+# Model Class name
+modelClass: Xeor\OctoCart\Models\Category
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

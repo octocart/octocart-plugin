@@ -1,0 +1,23 @@
+<?php
+$items = (array) json_decode($value);
+if (!empty($items)):
+foreach ($items as $item):
+$product = \Xeor\OctoCart\Models\Product::find($item->product);
+
+if (!$product) { print e(trans('backend::lang.list.no_records')) . '<br>'; }
+else {
+
+?>
+    <?= $product->title; ?>&nbsp;<?= $item->quantity; ?>&nbsp;x&nbsp;<?= $item->price; ?> <br>
+
+    <?php if ($item->attributes): ?>
+        <ul>
+            <?php foreach ($item->attributes as $name => $value): ?>
+                <li><?= $name; ?>:&nbsp;<?= $value; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+<?php } ?>
+<?php endforeach; ?>
+<?php endif; ?>

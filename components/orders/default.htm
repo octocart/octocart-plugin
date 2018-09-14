@@ -1,0 +1,10 @@
+{% if __SELF__.orders %}
+    <hr>
+        <h3>Orders</h3>
+        <ul class="order-list">
+            {% partial __SELF__ ~ "::items"
+            orders = __SELF__.orders
+            %}
+        </ul>
+    <hr>
+{% endif %}

@@ -1,0 +1,60 @@
+1.0.0:
+    - First release of OctoCart.
+    - create_orders_table.php
+2.0.1:
+    - Second version of OctoCart!!! Please look at the documentation before upgrading!!!
+    - create_categories_table.php
+    - create_products_table.php
+2.0.2:
+    - Fixes + Add Russian translation.
+    - create_product_attributes_table.php
+2.0.3: Fixed typo.
+2.0.4: Fixed issue with price filter.
+2.0.5: Fixed issue with price filter.
+2.0.6:
+    - Minor update.
+    - create_products_fields.php
+    - demo_seed.php
+2.0.7: Added product availability date.
+2.0.8: !!! Renamed productDisplay and orderDisplay components.
+2.0.9: Fixed issue with demo_seed.php.
+2.0.10: Fixed some issues.
+2.0.11: Fixed some issues.
+2.0.12: !!! Now you can edit orders. Updated billing_info & shipping_info fields. Updated the order component template.
+2.0.13:
+    - Added the status column to the orders table.
+    - create_orders_status.php
+2.0.14:
+    - Added the note column to the orders table.
+    - create_orders_note.php
+2.0.15:
+    - Added the phone column to the orders table.
+    - create_orders_phone.php
+2.0.16: Fixed some issues.
+2.0.17: Added $order variable to mail template.
+2.0.18:
+    - Added variations to product.
+    - create_products_variations.php
+2.0.19:
+    - Added the active column to the categories table.
+    - create_categories_active.php
+2.0.20:
+    - Added the external id and excerpt columns to the categories table.
+    - create_categories_external_id.php
+    - create_categories_excerpt.php
+2.0.21: Added the images field to the category.
+2018.6.1:
+    - Added the external id column to the products table.
+    - create_products_external_id.php
+2018.7.1:
+    - Added the code column to the product attributes table.
+    - create_product_attributes_code.php
+2018.8.1: Added feature for sorting products.
+2018.8.2:
+    - Added shipping methods to order.
+    - create_shipping_methods_table.php
+    - shipping_methods_seed.php
+2018.8.3:
+    - Added payment methods to order.
+    - create_payment_methods_table.php
+    - payment_methods_seed.php

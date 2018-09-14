@@ -1,0 +1,75 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    update_existing:
+        label: Update existing products
+        comment: Check this box to update products that have exactly the same ID, title or slug.
+        type: checkbox
+        default: true
+        span: left
+
+    generate_slug:
+        label: Generate slug automatically
+        comment: Check this box to generate slug from title.
+        type: checkbox
+        default: true
+        span: left
+
+    auto_create_categories:
+        label: Create categories specified in the import file
+        comment: You should match the Categories column to use this feature, otherwise select the default categories to use from the items below.
+        type: checkbox
+        default: true
+        span: left
+
+    product_categories:
+        label: Categories
+        commentAbove: Select the categories that imported products will belong to (optional).
+        type: checkboxlist
+        span: left
+        cssClass: field-indent
+        trigger:
+            action: hide
+            field: auto_create_categories
+            condition: checked
+
+    default_author:
+        label: Default product author (optional)
+        comment: The import will try to use an existing author if you match the Author Email column, otherwise the author specified above is used.
+        type: dropdown
+        placeholder: -- Select author --
+        span: left
+
+    default_type:
+        label: Default product type (optional)
+        comment: The import will try to use an existing product type if you match the Type column, otherwise the type specified above is used.
+        type: dropdown
+        placeholder: -- Select type --
+        span: left
+        default: simple
+
+    default_stock_status:
+        label: Default stock status (optional)
+        comment: The import will try to use an existing product stock status if you match the Stock Status column, otherwise the stock status specified above is used.
+        type: dropdown
+        placeholder: -- Select stock status --
+        span: left
+        default: instock
+
+#    product_attributes:
+#        label: Attributes
+#        type: mediafinder
+#        mode: file
+#        fileTypes: csv
+#        span: left
+
+    product_attributes_import_file:
+        label: Attributes
+        type: fileupload
+        mode: file
+        span: left
+        fileTypes: csv
+        useCaption: false

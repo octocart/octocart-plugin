@@ -1,0 +1,64 @@
+subject = "New Order"
+==
+Hi Admin,
+
+You recently received an order for {{ count }} items from your website, the details of which are as follows:
+
+{% for item in items %}
+    {% set product = item.product %}
+    {% set quantity = item.quantity %}
+    {% set price = item.price %}
+    {% set attributes = item.attributes %}
+    {{ quantity }} x {{ product.title }} @ {{ price|price() }}
+{% endfor %}
+Order total: {{ total|price() }}
+Order VAT: {{ vat|price() }}
+
+Billing Information:
+{% for key, value in billing %}
+    {{ value }}
+{% endfor %}
+
+Shipping Information:
+{% for key, value in shipping %}
+    {{ value }}
+{% endfor %}
+
+
+Thanks for using OctoCart!
+
+-----
+
+This email was sent automatically by OctoCart, the magic behind {{ site }}. Please do not reply.
+
+==
+
+<h1>Hi Admin,</h1>
+
+<p>You recently received an order for {{ count }} items from your website, the details of which are as follows:</p>
+
+{% for item in items %}
+    {% set product = item.product %}
+    {% set quantity = item.quantity %}
+    {% set price = item.price %}
+    {% set attributes = item.attributes %}
+    {{ quantity }} x {{ product.title }} @ {{ price|price() }} <br/>
+{% endfor %}
+<p><strong>Order total: {{ total|price() }}</strong></p>
+<p><strong>Order VAT: {{ vat|price() }}</strong></p>
+
+<h3>Billing Information:</h3>
+{% for key, value in billing %}
+    {{ value }}<br/>
+{% endfor %}
+
+<h3>Shipping Information:</h3>
+{% for key, value in shipping %}
+    {{ value }}<br/>
+{% endfor %}
+
+<p>Thanks for using OctoCart!</p>
+
+<p>-----</p>
+
+<p>This email was sent automatically by OctoCart, the magic behind {{ site }}. Please do not reply.</p>

@@ -1,0 +1,100 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        type: partial
+        path: ~/plugins/xeor/octocart/models/order/_id_field.htm
+
+tabs:
+    fields:
+
+        created_at:
+            tab: xeor.octocart::lang.order.general_details
+            label: xeor.octocart::lang.order.created_at
+            type: datepicker
+            span: left
+
+        date_completed:
+            tab: xeor.octocart::lang.order.general_details
+            label: xeor.octocart::lang.order.date_completed
+            span: left
+            type: datepicker
+
+        status:
+            tab: xeor.octocart::lang.order.general_details
+            label: xeor.octocart::lang.order.status
+            span: left
+            type: dropdown
+
+#        customer:
+#            tab: xeor.octocart::lang.order.general_section
+#            label: xeor.octocart::lang.order.customer
+
+        note:
+            tab: xeor.octocart::lang.order.general_details
+            label: xeor.octocart::lang.order.note
+            span: left
+            type: textarea
+
+        billing_info:
+            tab: xeor.octocart::lang.order.billing_details
+            type: datatable
+            columns:
+                name:
+                    title: xeor.octocart::lang.order.billing_details_name
+                value:
+                    title: xeor.octocart::lang.order.billing_details_value
+
+        payment_method:
+            label: xeor.octocart::lang.order.payment_method
+            span: left
+            nameFrom: name
+            descriptionFrom: description
+            type: relation
+            tab: xeor.octocart::lang.order.billing_details
+
+        date_paid:
+            tab: xeor.octocart::lang.order.billing_details
+            label: xeor.octocart::lang.order.date_paid
+            span: left
+            type: datepicker
+
+        email:
+            tab: xeor.octocart::lang.order.billing_details
+            label: xeor.octocart::lang.order.email
+            span: left
+
+        phone:
+            tab: xeor.octocart::lang.order.billing_details
+            label: xeor.octocart::lang.order.phone
+            span: left
+
+        shipping_info:
+            tab: xeor.octocart::lang.order.shipping_details
+            type: datatable
+            columns:
+                name:
+                    title: xeor.octocart::lang.order.shipping_info_name
+                value:
+                    title: xeor.octocart::lang.order.shipping_info_value
+
+        shipping_method:
+            label: xeor.octocart::lang.order.shipping_method
+            span: left
+            nameFrom: name
+            descriptionFrom: description
+            type: relation
+            tab: xeor.octocart::lang.order.shipping_details
+
+        shipping_total:
+            label: xeor.octocart::lang.order.shipping_total
+            span: left
+            type: number
+            tab: xeor.octocart::lang.order.shipping_details
+
+        items:
+            tab: xeor.octocart::lang.order.items
+            type: partial
+            path: ~/plugins/xeor/octocart/models/order/_items_field.htm

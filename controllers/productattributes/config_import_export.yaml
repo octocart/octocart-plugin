@@ -1,0 +1,41 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    # Page title
+    title: xeor.octocart::lang.attributes.import
+
+    # Import List Column configuration
+    list: $/xeor/octocart/models/productattributeimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/xeor/octocart/models/productattributeimport/fields.yaml
+
+    # Import Model class
+    modelClass: Xeor\OctoCart\Models\ProductAttributeImport
+
+    # Redirect when finished
+    redirect: xeor/octocart/products
+
+    # Required permissions
+    permissions: xeor.octocart.access_import_export
+
+export:
+    # Page title
+    title: xeor.octocart::lang.attributes.export
+
+    # Output file name
+    fileName: attributes.csv
+
+    # Export List Column configuration
+    list: $/xeor/octocart/models/productattributeexport/columns.yaml
+
+    # Export Model class
+    modelClass: Xeor\OctoCart\Models\ProductAttributeExport
+
+    # Redirect when finished
+    redirect: xeor/octocart/products
+
+    # Required permissions
+    permissions: xeor.octocart.access_import_export

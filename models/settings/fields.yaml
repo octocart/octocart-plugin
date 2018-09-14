@@ -1,0 +1,143 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+tabs:
+    fields:
+        section_currency:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.section_currency
+            type: section
+            comment: xeor.octocart::lang.settings.section_currency_description
+        currency:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.currency
+            type: text
+            default: $
+            comment: xeor.octocart::lang.settings.currency_description
+            span: left
+        currency_pos:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.currency_pos
+            comment: xeor.octocart::lang.settings.currency_pos_description
+            span: left
+            type: dropdown
+            options:
+                left: xeor.octocart::lang.settings.currency_pos_left
+                right: xeor.octocart::lang.settings.currency_pos_right
+                left_space: xeor.octocart::lang.settings.currency_pos_left_space
+                right_space: xeor.octocart::lang.settings.currency_pos_right_space
+        thousand_sep:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.thousand_sep
+            comment: xeor.octocart::lang.settings.thousand_sep_description
+            span: left
+            default: ","
+        decimal_sep:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.num_decimals
+            comment: xeor.octocart::lang.settings.num_decimals_description
+            span: left
+            default: "."
+        num_decimals:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.num_decimals
+            comment: xeor.octocart::lang.settings.num_decimals_description
+            span: left
+            type: number
+            default: "2"
+
+        section_vat:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.section_vat
+            type: section
+        vat_state:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.vat_state
+            type: switch
+        vat_value:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.vat_value
+            type: text
+            placeholder: %
+            comment: xeor.octocart::lang.settings.vat_value_description
+            span: left
+
+        section_pages:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.section_pages
+            type: section
+        product_display_page:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.product_display_page
+            type: dropdown
+            comment: xeor.octocart::lang.settings.product_display_page_description
+            default: product
+            span: left
+        category_page:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.category_page
+            type: dropdown
+            comment: xeor.octocart::lang.settings.category_page_description
+            default: category
+            span: right
+        cart_page:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.cart_page
+            type: dropdown
+            comment: xeor.octocart::lang.settings.cart_page_description
+            default: cart
+            span: left
+        checkout_page:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.checkout_page
+            type: dropdown
+            comment: xeor.octocart::lang.settings.checkout_page_description
+            default: checkout
+            span: right
+        success_page:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.success_page
+            type: dropdown
+            comment: xeor.octocart::lang.settings.success_page_description
+            default: success
+            span: left
+        order_display_page:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.order_display_page
+            type: dropdown
+            comment: xeor.octocart::lang.settings.order_display_page_description
+            default: order
+            span: right
+
+
+        section_redirect:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.section_redirect
+            type: section
+        redirect_user_after_add_to_cart:
+            tab: xeor.octocart::lang.settings.tab_general
+            label: xeor.octocart::lang.settings.redirect_user_after_add_to_cart
+            type: text
+            default: cart
+            comment: xeor.octocart::lang.settings.redirect_user_after_add_to_cart_description
+            span: left
+
+        section_messages:
+            tab: xeor.octocart::lang.settings.tab_checkout
+            label: xeor.octocart::lang.settings.section_messages
+            type: section
+            comment: xeor.octocart::lang.settings.section_messages_description
+        admin_emails:
+            tab: xeor.octocart::lang.settings.tab_checkout
+            label: xeor.octocart::lang.settings.admin_emails
+            type: textarea
+            comment: xeor.octocart::lang.settings.admin_emails_description
+            span: left
+        send_user_message:
+            tab: xeor.octocart::lang.settings.tab_checkout
+            label: xeor.octocart::lang.settings.send_user_message
+            type: switch
+            span: right

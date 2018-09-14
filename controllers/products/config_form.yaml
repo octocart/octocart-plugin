@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: xeor.octocart::lang.products.create_product
+
+# Model Form Field configuration
+form: $/xeor/octocart/models/product/fields.yaml
+
+# Model Class name
+modelClass: Xeor\OctoCart\Models\Product
+
+# Default redirect location
+defaultRedirect: xeor/octocart/products
+
+# Create page
+create:
+    title: xeor.octocart::lang.products.create_product
+    redirect: xeor/octocart/products/update/:id
+    redirectClose: xeor/octocart/products
+
+# Update page
+update:
+    title: xeor.octocart::lang.products.edit_product
+    redirect: xeor/octocart/products
+    redirectClose: xeor/octocart/products

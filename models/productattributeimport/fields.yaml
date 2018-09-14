@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    update_existing:
+        label: Update existing product attributes
+        comment: Check this box to update product attributes that have exactly the same ID, name or code.
+        type: checkbox
+        default: true
+        span: left
+
+    use_product_title:
+        label: Use product title
+        comment: Try to find Product by title instead id.
+        type: checkbox
+        default: false
+        span: left

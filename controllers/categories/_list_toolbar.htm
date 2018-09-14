@@ -1,0 +1,46 @@
+<div class="dropdown">
+    <button data-toggle="dropdown" class="btn btn-primary">
+        <i class="icon-wrench" style="margin-right: 5px"></i>
+        <?= e(trans('xeor.octocart::lang.categories.actions')) ?>
+    </button>
+
+    <ul class="dropdown-menu" role="menu" data-dropdown-title="<?= e(trans('xeor.octocart::lang.categories.actions')) ?>">
+
+        <li role="presentation">
+            <a role="menuitem"
+               href="<?= Backend::url('xeor/octocart/categories/create') ?>"
+               class="oc-icon-plus">
+                <?= e(trans('xeor.octocart::lang.categories.new_category')) ?>
+            </a>
+        </li>
+
+        <li role="presentation" class="divider"></li>
+
+        <li role="presentation">
+            <a role="menuitem"
+               href="javascript:;"
+               onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+               data-request="onDelete"
+               data-request-confirm="<?= e(trans('xeor.octocart::lang.categories.delete_confirm')) ?>"
+               data-trigger-action="enable"
+               data-trigger=".control-list input[type=checkbox]"
+               data-trigger-condition="checked"
+               data-request-success="$el.addClass('disabled')"
+               data-stripe-load-indicator
+               class="oc-icon-trash-o disabled">
+                <?= e(trans('backend::lang.list.delete_selected')) ?>
+            </a>
+        </li>
+
+        <li role="presentation" class="divider"></li>
+
+        <li role="presentation">
+            <a role="menuitem"
+               href="<?= Backend::url('xeor/octocart/categories/reorder') ?>"
+               class="oc-icon-sitemap">
+                <?= e(trans('xeor.octocart::lang.categories.reorder')) ?>
+            </a>
+        </li>
+
+    </ul>
+</div>

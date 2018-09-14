@@ -1,0 +1,201 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: xeor.octocart::lang.product.title
+        span: left
+        placeholder: xeor.octocart::lang.product.title_placeholder
+        required: true
+    slug:
+        label: xeor.octocart::lang.product.slug
+        span: right
+        placeholder: xeor.octocart::lang.product.slug_placeholder
+        required: true
+        preset:
+            field: title
+            type: slug
+    type:
+        label: xeor.octocart::lang.product.type
+        type: dropdown
+        span: left
+        required: true
+
+tabs:
+    fields:
+
+        # General
+        images:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.product.images
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+        excerpt:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.product.excerpt
+            type: textarea
+            size: small
+        description:
+            tab: xeor.octocart::lang.product.tab_edit
+            type: Backend\FormWidgets\RichEditor
+            size: huge
+        price:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.product.price
+            type: number
+            span: left
+            default: '0.00'
+            cssClass: text-left
+            required: true
+        sale_price:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.product.sale_price
+            type: number
+            span: right
+            placeholder: '0.00'
+            cssClass: text-left
+
+        # Invenory
+        sku:
+            tab: xeor.octocart::lang.product.tab_inventory
+            label: xeor.octocart::lang.product.sku
+            comment: xeor.octocart::lang.product.sku_description
+            span: left
+        manage_stock:
+            tab: xeor.octocart::lang.product.tab_inventory
+            label: xeor.octocart::lang.product.manage_stock
+            comment: xeor.octocart::lang.product.manage_stock_description
+            type: checkbox
+        quantity:
+            tab: xeor.octocart::lang.product.tab_inventory
+            label: xeor.octocart::lang.product.quantity
+            comment: xeor.octocart::lang.product.quantity_description
+            type: number
+            span: left
+            trigger:
+                  action: show
+                  field: manage_stock
+                  condition: checked
+#        backorders:
+#            tab: xeor.octocart::lang.product.tab_inventory
+#            label: xeor.octocart::lang.product.backorders
+#            comment: xeor.octocart::lang.product.backorders_description
+#            type: dropdown
+#            span: right
+#            trigger:
+#                  action: show
+#                  field: manage_stock
+#                  condition: checked
+        stock_status:
+            tab: xeor.octocart::lang.product.tab_inventory
+            label: xeor.octocart::lang.product.status
+            comment: xeor.octocart::lang.product.status_description
+            type: dropdown
+            required: true
+#        sold_individually:
+#            tab: xeor.octocart::lang.product.tab_inventory
+#            label: xeor.octocart::lang.product.sold_individually
+#            comment: xeor.octocart::lang.product.sold_individually_description
+#            type: checkbox
+
+        # Shipping
+        weight:
+            tab: xeor.octocart::lang.product.tab_shipping
+            label: xeor.octocart::lang.product.weight
+            comment: xeor.octocart::lang.product.weight_description
+            type: number
+            placeholder: xeor.octocart::lang.product.weight
+            span: left
+            cssClass: text-left
+        length:
+            tab: xeor.octocart::lang.product.tab_shipping
+            label: xeor.octocart::lang.product.dimensions
+            type: number
+            placeholder: xeor.octocart::lang.product.length
+            span: left
+            cssClass: text-left
+        width:
+            tab: xeor.octocart::lang.product.tab_shipping
+            type: number
+            placeholder: xeor.octocart::lang.product.width
+            span: left
+            cssClass: text-left
+        height:
+            tab: xeor.octocart::lang.product.tab_shipping
+            type: number
+            placeholder: xeor.octocart::lang.product.height
+            comment: xeor.octocart::lang.product.dimensions_description
+            span: left
+            cssClass: text-left
+
+        # Linked products
+        up_sells:
+            tab: xeor.octocart::lang.product.tab_linked_products
+            label: xeor.octocart::lang.product.up_sells
+            comment: xeor.octocart::lang.product.up_sells_description
+            type: taglist
+            options: true
+        cross_sells:
+            tab: xeor.octocart::lang.product.tab_linked_products
+            label: xeor.octocart::lang.product.cross_sells
+            comment: xeor.octocart::lang.product.cross_sells_description
+            type: taglist
+            options: true
+
+        # Attributes
+        productAttributes:
+            tab: xeor.octocart::lang.product.tab_attributes
+            type: partial
+            path: $/xeor/octocart/models/product/_attributes.htm
+
+        # Variations
+        variations:
+            tab: xeor.octocart::lang.product.tab_variations
+            type: repeater
+            trigger:
+                action: show
+                field: type
+                condition: value[variable]
+            form:
+                fields:
+                    id:
+                        type: variation
+
+        # Categories
+        categories:
+            tab: xeor.octocart::lang.product.tab_categories
+            type: relation
+            commentAbove: xeor.octocart::lang.product.categories_comment
+            placeholder: xeor.octocart::lang.product.categories_placeholder
+            select: title
+
+        # Manage
+        published:
+            tab: xeor.octocart::lang.product.tab_manage
+            label: xeor.octocart::lang.product.published
+            type: checkbox
+            span: left
+        published_at:
+            tab: xeor.octocart::lang.product.tab_manage
+            label: xeor.octocart::lang.product.published_on
+            comment: xeor.octocart::lang.product.published_on_description
+            span: left
+            cssClass: checkbox-align
+            type: datepicker
+            mode: datetime
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+        promote:
+            tab: xeor.octocart::lang.product.tab_manage
+            label: xeor.octocart::lang.product.promote
+            type: checkbox
+
+        external_id:
+            tab: xeor.octocart::lang.product.tab_manage
+            label: xeor.octocart::lang.product.external_id
+            span: left

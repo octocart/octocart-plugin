@@ -1,0 +1,9 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+productAttributes:
+    label: xeor.octocart::lang.attributes.list_title
+    list: ~/plugins/xeor/octocart/models/productattribute/columns.yaml
+    form: ~/plugins/xeor/octocart/models/productattribute/fields.yaml
+    emptyMessage: backend::lang.list.no_records

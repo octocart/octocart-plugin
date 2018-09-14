@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <form action="" data-request="onCheckout" data-request-redirect="/{{ successPage }}">
+            <div class="col-md-6">
+                <h2>Billing Address</h2>
+                <div class="form-group">
+                    <input type="text" required="true" name="billing[name]" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" required="true" name="billing[email]" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="billing[phone]" class="form-control" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="billing[address]" class="form-control" placeholder="Address">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="billing[town]" class="form-control" placeholder="Town">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="billing[country]" class="form-control" placeholder="Country">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="billing[postcode]" class="form-control" placeholder="Post Code">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Shipping Address</h2>
+                <div class="form-group">
+                    <input type="text" name="shipping[name]" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="shipping[email]" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="shipping[phone]" class="form-control" placeholder="Phone">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="shipping[address]" class="form-control" placeholder="Address">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="shipping[town]" class="form-control" placeholder="Town">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="shipping[country]" class="form-control" placeholder="Country">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="shipping[postcode]" class="form-control" placeholder="Post Code">
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="copy_address"> Same as billing address
+                    </label>
+                </div>
+
+                <div class="text-right">
+                    <button class="btn btn-success" type="submit">Submit order</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

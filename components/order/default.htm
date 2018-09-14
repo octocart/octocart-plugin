@@ -1,0 +1,98 @@
+{% set order = __SELF__.order %}
+{% set items = __SELF__.items %}
+<div class="spacer"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1"><h1>Order №{{ order.id }}</h1></div>
+    </div>
+    {% if not items is empty %}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                    </tr>
+                    </thead>
+                    {% for itemId, item in items %}
+                        {% set product = item.product %}
+                        {% set quantity = item.quantity %}
+                        {% set price = item.price %}
+                        {% set attributes = item.attributes %}
+                        <tr>
+                            <td style="width: 166px;">
+                                {% if product.images.count %}
+                                    {% for image in product.images|slice(0, 1) %}
+                                        <img data-src="{{ image.filename }}"
+                                             src="{{ image.path }}"
+                                             class="img-responsive"
+                                             style="max-width: 150px;"
+                                             alt="{{ product.title }}" />
+                                    {% endfor %}
+                                {% else %}
+                                    <img src="http://placehold.it/150x150" class="img-responsive" alt="{{ product.title }}">
+                                {% endif %}
+                            </td>
+                            <td>
+                                <p><strong><a href="{{ product.url }}">{{ product.title }}</a></strong></p>
+
+                                <p>
+                                    {% if product.categories.count %}
+                                        {% for category in product.categories %}
+                                            <a href="{{ category.url }}">{{ category.title }}</a>{% if not loop.last %}, {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </p>
+
+                                {% if attributes is not empty %}
+                                    {% for name, value in attributes %}
+                                        <strong>{{ name }}:</strong>&nbsp;{{ value }}<br>
+                                    {% endfor %}
+                                {% endif %}
+                            </td>
+                            <td>{{ price|price() }}</td>
+                            <td>{{ quantity }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <p class="text-right">
+                                <strong>Total price: {{ order.total|price() }}</strong><br>
+                                Total VAT: {{ order.vat|price() }}<br>
+                            </p>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <h2>Billing Info</h2>
+                {% if not order.billing_info is empty %}
+                    {% for row in order.billing_info %}
+                        {{ row.value }}<br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col-md-5">
+                <h2>Shipping Info</h2>
+                {% if not order.shipping_info is empty %}
+                    {% for row in order.shipping_info %}
+                        {{ row.value }}<br>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3 class="text-center">Order not found!</h3>
+            </div>
+        </div>
+    {% endif %}
+</div>

@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: xeor.octocart::lang.payments.create_method
+
+# Model Form Field configuration
+form: $/xeor/octocart/models/paymentmethod/fields.yaml
+
+# Model Class name
+modelClass: Xeor\OctoCart\Models\PaymentMethod
+
+# Default redirect location
+defaultRedirect: xeor/octocart/payments
+
+# Create page
+create:
+    title: xeor.octocart::lang.payments.create_method
+    redirect: xeor/octocart/payments/update/:id
+    redirectClose: xeor/octocart/payments
+
+# Update page
+update:
+    title: xeor.octocart::lang.payments.edit_method
+    redirect: xeor/octocart/payments
+    redirectClose: xeor/octocart/payments

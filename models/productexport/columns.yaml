@@ -1,0 +1,31 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: ID
+    title: xeor.octocart::lang.product.title
+    slug: xeor.octocart::lang.product.slug
+    type: xeor.octocart::lang.product.type
+    sku: xeor.octocart::lang.product.sku
+    external_id: xeor.octocart::lang.product.external_id
+    excerpt: xeor.octocart::lang.product.excerpt
+    description: xeor.octocart::lang.product.content
+    price: xeor.octocart::lang.product.price
+    sale_price: xeor.octocart::lang.product.sale_price
+    published: xeor.octocart::lang.product.published
+    published_at: xeor.octocart::lang.product.published_on
+    promote: xeor.octocart::lang.product.promote
+    manage_stock: xeor.octocart::lang.product.manage_stock
+    quantity: xeor.octocart::lang.product.quantity
+    stock_status: xeor.octocart::lang.product.status
+    sold_individually: xeor.octocart::lang.product.sold_individually
+    weight: xeor.octocart::lang.product.weight
+    length: xeor.octocart::lang.product.length
+    width: xeor.octocart::lang.product.width
+    height: xeor.octocart::lang.product.height
+    categories: xeor.octocart::lang.product.categories
+    author_email: xeor.octocart::lang.product.author_email
+    created_at: xeor.octocart::lang.product.created_at
+    updated_at: xeor.octocart::lang.product.updated_at

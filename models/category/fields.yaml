@@ -1,0 +1,50 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: xeor.octocart::lang.category.title
+        placeholder: xeor.octocart::lang.category.title_placeholder
+        span: left
+    slug:
+        label: xeor.octocart::lang.category.slug
+        span: right
+        placeholder: xeor.octocart::lang.category.slug_placeholder
+        preset: title
+
+tabs:
+    fields:
+        excerpt:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.product.excerpt
+            type: textarea
+            size: small
+        description:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.category.description
+            type: Backend\FormWidgets\RichEditor
+        image:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.category.image
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+            span: left
+        images:
+            tab: xeor.octocart::lang.product.tab_edit
+            label: xeor.octocart::lang.product.images
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+        active:
+            tab: xeor.octocart::lang.product.tab_manage
+            label: xeor.octocart::lang.category.active
+            type: checkbox
+            span: left
+        external_id:
+            tab: xeor.octocart::lang.product.tab_manage
+            label: xeor.octocart::lang.product.external_id
+            span: left

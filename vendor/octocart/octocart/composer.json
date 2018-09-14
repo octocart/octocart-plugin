@@ -1,0 +1,23 @@
+{
+    "name": "octocart/octocart",
+    "description": "OctoCart Core",
+    "keywords": ["octocart", "october", "cms", "octobercms", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sozonov Alexey",
+            "email": "sozonov.alexey@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OctoCart\\OctoCart\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    }
+}

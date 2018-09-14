@@ -1,0 +1,17 @@
+<div class="dropdown">
+    <button data-toggle="dropdown" class="btn btn-primary">
+        <i class="icon-wrench" style="margin-right: 5px"></i>
+        <?= e(trans('xeor.octocart::lang.payments.actions')) ?>
+    </button>
+    <ul class="dropdown-menu" role="menu" data-dropdown-title="<?= e(trans('xeor.octocart::lang.payments.actions')) ?>">
+
+        <li>
+            <a href="<?= Backend::url('xeor/octocart/payments/create') ?>"
+               class="oc-icon-plus">
+                <?= e(trans('xeor.octocart::lang.payments.new_method')) ?>
+            </a>
+        </li>
+
+    </ul>
+</div>
+

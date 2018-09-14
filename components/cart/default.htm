@@ -1,0 +1,37 @@
+<div class="spacer"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1"><h2>Your cart</h2></div>
+    </div>
+    <div id="octocart-items">
+        {% partial __SELF__ ~ "::items"
+        items = __SELF__.items
+        %}
+    </div>
+    <div class="row">
+        {% if crossSells.count %}
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h2>You may also like…</h2>
+                    <div class="container-fluid">
+                        <div class="row">
+                            {% for crossSell in crossSells %}
+                                <div class="col-md-3">
+                                    {% for image in crossSell.images|slice(0, 1) %}
+                                        <img data-src="{{ image.filename }}"
+                                             src="{{ image.path }}"
+                                             class="img-responsive"
+                                             alt="{{ crossSell.title }}" />
+                                    {% else %}
+                                        <img src="http://placehold.it/210x210" class="img-responsive" alt="{{ crossSell.title }}">
+                                    {% endfor %}
+                                    <p><strong><a href="{{ crossSell.url }}">{{ crossSell.title }}</a></strong></p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

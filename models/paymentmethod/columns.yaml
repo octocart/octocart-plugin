@@ -1,0 +1,17 @@
+columns:
+    name:
+        label: 'xeor.octocart::lang.payment_method.name'
+        searchable: true
+        sortable: true
+    active:
+        label: 'xeor.octocart::lang.payment_method.active'
+        type: switch
+        searchable: false
+        sortable: true
+        width: 100px
+    weight:
+        label: xeor.octocart::lang.payment_method.weight
+        type: number
+        searchable: false
+        sortable: true
+        width: 100px

@@ -1,0 +1,9 @@
+<li class="payment_method {{ 'payment_method_' ~ gateway.id }}">
+    <input id="{{ 'payment_method_' ~ gateway.id }}" type="radio" class="input-radio" name="payment_method" value="{{ 'payment_method_' ~ gateway.id }}" />
+    <label for="{{ 'payment_method_' ~ gateway.id }}">
+        {{ gateway.title }}
+    </label>
+    <div class="payment_box {{ 'payment_method_' ~ gateway.id }}">
+        {{ gateway.description }}
+    </div>
+</li>

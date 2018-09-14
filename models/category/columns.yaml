@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: xeor.octocart::lang.category.title
+        searchable: true
+
+    product_count:
+        label: xeor.octocart::lang.category.products
+        sortable: false

@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "8701026feb4527c6d7eb7e0be5ed7eb6",
+    "content-hash": "4a5884a9445122c8be39c566d388a388",
+    "packages": [
+        {
+            "name": "octocart/octocart",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/octocart/octocart.git",
+                "reference": "04985d7ff5a966c1641d95689b8d903d2fa2acf0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/octocart/octocart/zipball/04985d7ff5a966c1641d95689b8d903d2fa2acf0",
+                "reference": "04985d7ff5a966c1641d95689b8d903d2fa2acf0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OctoCart\\Core\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sozonov Alexey",
+                    "email": "sozonov.alexey@gmail.com"
+                }
+            ],
+            "description": "OctoCart Core",
+            "keywords": [
+                "cms",
+                "laravel",
+                "october",
+                "octobercms",
+                "octocart"
+            ],
+            "time": "2018-03-03 12:23:28"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0.0"
+    },
+    "platform-dev": []
+}

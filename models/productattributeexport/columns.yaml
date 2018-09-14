@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: xeor.octocart::lang.attribute.id
+    product_id: xeor.octocart::lang.attribute.product_id
+    code: xeor.octocart::lang.attribute.code
+    name: xeor.octocart::lang.attribute.name
+    value: xeor.octocart::lang.attribute.value
+    created_at: xeor.octocart::lang.attribute.created_at
+    updated_at: xeor.octocart::lang.attribute.updated_at

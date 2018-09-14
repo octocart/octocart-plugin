@@ -1,0 +1,7 @@
+{% for order in orders %}
+    <li>
+        <a href="{{ order.url }}">Order №{{ order.id }}</a> - {{ order.created_at|date('M d, Y') }}
+    </li>
+{% else %}
+    <h3 class="text-center">{{ noOrdersMessage }}</h3>
+{% endfor %}

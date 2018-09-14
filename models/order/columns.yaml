@@ -1,0 +1,62 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: xeor.octocart::lang.orders.order
+        type: partial
+        path: ~/plugins/xeor/octocart/models/order/_id.htm
+        searchable: true
+
+    status:
+        label: xeor.octocart::lang.orders.status
+        type: partial
+        path: ~/plugins/xeor/octocart/models/order/_status.htm
+
+    created_at:
+        label: xeor.octocart::lang.orders.created_at
+        type: date
+
+    total:
+        label: xeor.octocart::lang.orders.total
+        type: partial
+        path: ~/plugins/xeor/octocart/models/order/_total.htm
+        searchable: false
+
+    actions:
+        label: xeor.octocart::lang.orders.actions
+        type: partial
+        path: ~/plugins/xeor/octocart/models/order/_actions.htm
+        sortable: false
+
+#    user_id:
+#        label: xeor.octocart::lang.orders.user
+#        relation: user
+#        select: name
+#        searchable: true
+
+#    email:
+#        label: xeor.octocart::lang.orders.email
+#        searchable: true
+
+#    currency:
+#        label: xeor.octocart::lang.orders.currency
+#        searchable: false
+#    items:
+#        label: xeor.octocart::lang.orders.items
+#        type: partial
+#        path: ~/plugins/xeor/octocart/models/order/_items.htm
+#    billing_info:
+#        label: xeor.octocart::lang.orders.billing_info
+#        type: partial
+#        path: ~/plugins/xeor/octocart/models/order/_billing_info.htm
+#    shipping_info:
+#        label: xeor.octocart::lang.orders.shipping_info
+#        type: partial
+#        path: ~/plugins/xeor/octocart/models/order/_shipping_info.htm
+#    vat:
+#        label: xeor.octocart::lang.orders.vat
+#        searchable: false
+#        hidden: true

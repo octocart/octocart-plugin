@@ -1,0 +1,46 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: xeor.octocart::lang.product.title
+        searchable: true
+    sku:
+        label: xeor.octocart::lang.product.sku
+        searchable: true
+    stock_status:
+        label: xeor.octocart::lang.product.status
+        searchable: true
+        type: status
+
+    type:
+        label: xeor.octocart::lang.product.type
+        type: partial
+        path: ~/plugins/xeor/octocart/models/product/_type_column.htm
+        searchable: true
+
+    slug:
+        label: xeor.octocart::lang.product.slug
+        searchable: false
+    categories:
+        label: xeor.octocart::lang.product.categories
+        relation: categories
+        select: title
+        searchable: true
+        sortable: false
+    created_at:
+        label: xeor.octocart::lang.product.created_at
+        searchable: true
+        invisible: true
+    published:
+        label: xeor.octocart::lang.product.published
+        searchable: false
+        invisible: true
+        type: switch
+    updated_at:
+        label: xeor.octocart::lang.product.updated_at
+        searchable: true

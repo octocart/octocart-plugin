@@ -1,0 +1,15 @@
+<div class="scoreboard">
+    <div data-control="toolbar">
+        <div class="scoreboard-item control-chart" data-control="chart-pie">
+            <ul>
+                <li data-color="#95b753"><?= e(trans('xeor.octocart::lang.products.chart_published')) ?> <span><?= $productsPublished ?></span></li>
+                <li data-color="#e5a91a"><?= e(trans('xeor.octocart::lang.products.chart_drafts')) ?> <span><?= $productsDrafts ?></span></li>
+                <li data-color="#cccccc"><?= e(trans('xeor.octocart::lang.products.chart_total')) ?> <span><?= $productsTotal ?></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<?= $this->listRender() ?>

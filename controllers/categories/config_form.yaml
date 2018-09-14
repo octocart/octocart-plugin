@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: xeor.octocart::lang.categories.category
+
+# Model Form Field configuration
+form: $/xeor/octocart/models/category/fields.yaml
+
+# Model Class name
+modelClass: Xeor\OctoCart\Models\Category
+
+# Default redirect location
+defaultRedirect: xeor/octocart/categories
+
+# Create page
+create:
+    title: xeor.octocart::lang.categories.create_category
+    redirect: xeor/octocart/categories/update/:id
+    redirectClose: xeor/octocart/categories
+
+# Update page
+update:
+    title: xeor.octocart::lang.categories.edit_category
+    redirect: xeor/octocart/categories
+    redirectClose: xeor/octocart/categories

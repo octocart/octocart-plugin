@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: xeor.octocart::lang.shipping.create_method
+
+# Model Form Field configuration
+form: $/xeor/octocart/models/shippingmethod/fields.yaml
+
+# Model Class name
+modelClass: Xeor\OctoCart\Models\ShippingMethod
+
+# Default redirect location
+defaultRedirect: xeor/octocart/shipping
+
+# Create page
+create:
+    title: xeor.octocart::lang.shipping.create_method
+    redirect: xeor/octocart/shipping/update/:id
+    redirectClose: xeor/octocart/shipping
+
+# Update page
+update:
+    title: xeor.octocart::lang.shipping.edit_method
+    redirect: xeor/octocart/shipping
+    redirectClose: xeor/octocart/shipping

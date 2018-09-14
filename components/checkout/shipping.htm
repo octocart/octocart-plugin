@@ -1,0 +1,9 @@
+<div id="shipping" class="shipping-payment">
+    <ul>
+        {% for method in availableMethods %}
+            {% partial __SELF__ ~ '::shipping_method' method=method %}
+        {% else %}
+            {# It seems that there are no available method methods #}
+        {% endfor %}
+    </ul>
+</div>

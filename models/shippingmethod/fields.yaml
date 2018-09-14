@@ -1,0 +1,30 @@
+fields:
+    name:
+        label: xeor.octocart::lang.shipping_method.name
+        span: left
+        type: text
+        required: true
+    code:
+        label: xeor.octocart::lang.shipping_method.code
+        span: right
+        type: dropdown
+        required: true
+    weight:
+        label: xeor.octocart::lang.shipping_method.weight
+        type: number
+        span: left
+        default: '0'
+    price:
+        label: xeor.octocart::lang.shipping_method.price
+        span: right
+        type: number
+        default: '0.00'
+    description:
+        label: xeor.octocart::lang.shipping_method.description
+        type: Backend\FormWidgets\RichEditor
+        size: huge
+    active:
+        label: xeor.octocart::lang.shipping_method.active
+        span: left
+        default: 1
+        type: switch

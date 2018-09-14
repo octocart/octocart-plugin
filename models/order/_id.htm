@@ -1,0 +1,23 @@
+#<?php echo $value; ?>
+<?php if ($record->email): ?>
+<br><?php echo $record->email; ?>
+<?php endif; ?>
+<div class="row-actions" style="min-height: 25px;margin-top: 10px">
+    <button class="btn btn-xs btn-default js-btn-action"
+            style="display: none;"
+            type="button"
+            data-stripe-load-indicator
+            data-request="onEdit"
+            data-request-data="id: <?= $record->id; ?>">
+        <?= e(trans('xeor.octocart::lang.orders.edit')) ?>
+    </button>
+    <button class="btn btn-xs btn-danger js-btn-action"
+            style="display: none;"
+            type="button"
+            data-stripe-load-indicator
+            data-request="onRemove"
+            data-request-data="id: <?= $record->id; ?>"
+            data-request-confirm="<?= e(trans('xeor.octocart::lang.orders.confirm')) ?>">
+        <?= e(trans('xeor.octocart::lang.orders.delete')) ?>
+    </button>
+</div>

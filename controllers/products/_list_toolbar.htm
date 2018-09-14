@@ -1,0 +1,116 @@
+<div class="dropdown">
+    <button data-toggle="dropdown" class="btn btn-primary">
+        <i class="icon-wrench" style="margin-right: 5px"></i>
+        <?= e(trans('xeor.octocart::lang.products.actions')) ?>
+    </button>
+    <ul class="dropdown-menu" role="menu" data-dropdown-title="<?= e(trans('xeor.octocart::lang.products.actions')) ?>">
+
+        <li role="presentation">
+            <a role="menuitem"
+               href="<?= Backend::url('xeor/octocart/products/create') ?>"
+               class="oc-icon-plus">
+                <?= e(trans('xeor.octocart::lang.products.new_product')) ?>
+            </a>
+        </li>
+
+        <li role="presentation" class="divider"></li>
+
+        <li role="presentation">
+            <a role="menuitem"
+               onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+               class="oc-icon-trash-o disabled"
+               data-request="onDelete"
+               data-request-confirm="<?= e(trans('xeor.octocart::lang.products.delete_confirm')) ?>"
+               data-trigger-action="enable"
+               data-trigger=".control-list input[type=checkbox]"
+               data-trigger-condition="checked"
+               data-request-success="$(this).addClass('disabled')"
+               data-stripe-load-indicator
+               href="javascript:;">
+                <?= e(trans('backend::lang.list.delete_selected')) ?>
+            </a>
+        </li>
+
+        <li role="presentation">
+            <a role="menuitem"
+               class="oc-icon-trash-o"
+               data-request="onDeleteAll"
+               data-request-confirm="<?= e(trans('xeor.octocart::lang.products.delete_confirm')) ?>"
+               href="javascript:;"
+               data-stripe-load-indicator>
+                <?= e(trans('xeor.octocart::lang.products.delete_all')) ?>
+            </a>
+        </li>
+
+        <li role="presentation" class="divider"></li>
+
+        <li role="presentation">
+            <a role="menuitem"
+               class="oc-icon-eye disabled"
+               onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+               data-request="onShow"
+               data-request-confirm="<?= e(trans('xeor.octocart::lang.products.show_confirm')) ?>"
+               data-trigger=".control-list input[type=checkbox]"
+               data-trigger-action="enable"
+               data-trigger-condition="checked"
+               data-request-success="$(this).addClass('disabled')"
+               data-stripe-load-indicator
+               href="javascript:;">
+                <?= e(trans('xeor.octocart::lang.products.show_selected')) ?>
+            </a>
+        </li>
+
+        <li role="presentation">
+            <a role="menuitem"
+               class="oc-icon-eye-slash disabled"
+               onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
+               data-request="onHide"
+               data-request-confirm="<?= e(trans('xeor.octocart::lang.products.hide_confirm')) ?>"
+               data-trigger=".control-list input[type=checkbox]"
+               data-trigger-condition="checked"
+               data-trigger-action="enable"
+               data-request-success="$(this).addClass('disabled')"
+               data-stripe-load-indicator
+               href="javascript:;">
+                <?= e(trans('xeor.octocart::lang.products.hide_selected')) ?>
+            </a>
+        </li>
+
+
+        <?php if ($this->user->hasAnyAccess(['xeor.octocart.access_import_export'])): ?>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation">
+                <a role="menuitem"
+                   class="oc-icon-download"
+                   href="<?= Backend::url('xeor/octocart/products/export') ?>">
+                    <?= e(trans('xeor.octocart::lang.products.export')) ?>
+                </a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem"
+                   class="oc-icon-upload"
+                   href="<?= Backend::url('xeor/octocart/products/import') ?>">
+                    <?= e(trans('xeor.octocart::lang.products.import')) ?>
+                </a>
+            </li>
+
+            <li role="presentation" class="divider"></li>
+            <li role="presentation">
+                <a role="menuitem"
+                   class="oc-icon-download"
+                   href="<?= Backend::url('xeor/octocart/productattributes/export') ?>">
+                    <?= e(trans('xeor.octocart::lang.attributes.export')) ?>
+                </a>
+            </li>
+            <li role="presentation">
+                <a role="menuitem"
+                   class="oc-icon-upload"
+                   href="<?= Backend::url('xeor/octocart/productattributes/import') ?>">
+                    <?= e(trans('xeor.octocart::lang.attributes.import')) ?>
+                </a>
+            </li>
+        <?php endif ?>
+
+    </ul>
+</div>
+

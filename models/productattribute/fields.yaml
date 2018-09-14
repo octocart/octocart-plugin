@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: xeor.octocart::lang.attribute.name
+        span: left
+    value:
+        label: xeor.octocart::lang.attribute.value
+        span: right
+    code:
+        label: xeor.octocart::lang.attribute.code
+        span: left
